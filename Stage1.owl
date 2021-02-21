@@ -21,6 +21,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Album_Has -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Album_Has">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#In_Album"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Created -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Created">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Created_by"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Created_by -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Created_by">
@@ -31,10 +47,29 @@
     
 
 
+    <!-- http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Featured -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Featured">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Radio_Show"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Track"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Genre_Has -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Genre_Has">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#in_Genre"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Hosts -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Hosts">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Presented_By"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#DJ"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Radio_Show"/>
     </owl:ObjectProperty>
@@ -51,13 +86,39 @@
     
 
 
+    <!-- http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Played -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Played">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Used"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Hosts"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Featured"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Presented_By -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Presented_By"/>
+    
+
+
     <!-- http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Produces -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Produces">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Producer"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Radio_Show"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Used -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Used"/>
     
 
 
@@ -65,6 +126,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#in_Genre">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Track"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Genre"/>
     </owl:ObjectProperty>
@@ -75,6 +137,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#technician_of">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Technician"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Radio_Show"/>
     </owl:ObjectProperty>
@@ -96,9 +159,12 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Last_Used">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#DJ"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Track"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Used"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Track"/>
+            </owl:Restriction>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
@@ -247,6 +313,7 @@
         <In_Album rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Layla_and_other"/>
         <in_Genre rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Rock"/>
         <Last_Used rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2003-12-12T03:30:00</Last_Used>
+        <Last_Used rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-01-03T05:00:15</Last_Used>
     </owl:NamedIndividual>
     
 
@@ -287,6 +354,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Radio_1">
         <rdf:type rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Radio_Show"/>
+        <Featured rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Layla"/>
+        <Featured rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#SoWhat"/>
+        <Featured rdf:resource="http://www.semanticweb.org/calum/ontologies/2021/1/untitled-ontology-3#Uptown_Funk_(Track)"/>
     </owl:NamedIndividual>
     
 
